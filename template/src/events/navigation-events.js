@@ -17,6 +17,7 @@ import { getFavorites } from '../data/favorites.js'
 import { getMoviesFullInfo } from '../data/movies.js'
 import { loadCategories, loadCategory } from "../requests/request-service.js";
 import { movies } from "../data/movies-data.js";
+import { getTrendingGifs } from "../data/giphy.js";
 
 // public API
 export const loadPage = (page = "") => {
@@ -35,7 +36,7 @@ export const loadPage = (page = "") => {
             return renderAbout();
         case TRENDING:
             setActiveNav(TRENDING);
-            return renderTrending;
+            return renderTrending();
         /* if the app supports error logging, use default to log mapping errors */
         default:
             return null;
@@ -76,12 +77,14 @@ export const renderCategory = (categoryId = null) => {
 
 // private functions
 
-const renderToTrending = () => {
-    q(CONTAINER_SELECTOR).innerHTML = toTrendingView();
-};
 
 const renderHome = () => {
     q(CONTAINER_SELECTOR).innerHTML = toHomeView();
+};
+
+const renderTrending = () => {
+    const trending = loadTrending();
+    q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trending);
 };
 
 const renderCategories = () => {
