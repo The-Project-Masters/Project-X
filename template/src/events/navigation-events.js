@@ -4,7 +4,9 @@ import {
     CATEGORIES,
     FAVORITES,
     ABOUT,
+    TRENDING,
 } from "../common/constants.js";
+import { toTrendingView } from "../views/trending-view.js";
 import { toCategoriesView } from "../views/category-view.js";
 import { toFavoritesView } from "../views/favorites-view.js";
 import { toAboutView } from "../views/about-view.js";
@@ -31,6 +33,9 @@ export const loadPage = (page = "") => {
         case ABOUT:
             setActiveNav(ABOUT);
             return renderAbout();
+        case TRENDING:
+            setActiveNav(TRENDING);
+            return renderTrending;
         /* if the app supports error logging, use default to log mapping errors */
         default:
             return null;
@@ -71,6 +76,10 @@ export const renderCategory = (categoryId = null) => {
 
 // private functions
 
+const renderToTrending = () => {
+    q(CONTAINER_SELECTOR).innerHTML = toTrendingView();
+};
+
 const renderHome = () => {
     q(CONTAINER_SELECTOR).innerHTML = toHomeView();
 };
@@ -88,3 +97,4 @@ const renderFavorites = () => {
 const renderAbout = () => {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();
 };
+
