@@ -17,7 +17,6 @@ import { getFavorites } from '../data/favorites.js'
 import { getMoviesFullInfo } from '../data/movies.js'
 import { loadCategories, loadCategory } from "../requests/request-service.js";
 import { movies } from "../data/movies-data.js";
-import { getTrendingGifs } from "../data/giphy.js";
 
 // public API
 export const loadPage = (page = "") => {
