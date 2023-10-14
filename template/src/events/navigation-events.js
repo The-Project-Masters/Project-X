@@ -6,7 +6,7 @@ import {
     ABOUT,
     TRENDING,
 } from "../common/constants.js";
-import { toTrendingView } from "../views/trending-view.js";
+// import { toTrendingView } from "../views/trending-view.js";
 import { toCategoriesView } from "../views/category-view.js";
 import { toFavoritesView } from "../views/favorites-view.js";
 import { toAboutView } from "../views/about-view.js";
