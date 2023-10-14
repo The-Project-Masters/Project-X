@@ -1,0 +1,34 @@
+:root {
+  --border-color: #3f3241;
+  --text-color: #bb87fd;
+  --card-background: #0d0e10;
+}
+
+div.content {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 90%;
+  font-family: Roboto, sans-serif;
+}
+
+div.content div.category-card {
+  border: solid 2px var(--border-color);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--card-background);
+  width: 18%;
+}
+
+div.content div.category-card h1 {
+  color: var(--text-color);
+}
+
+div.content div.category-card a {
+  text-decoration: none;
+  color: #bb87fd;
+  background-color: black;
+  padding: 4px 6px;
+}
