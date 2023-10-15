@@ -1,10 +1,14 @@
-import { toMovieSimple } from './movie-views.js';
-
-export const toSearchView = (movies, searchTerm) => `
-<div id="movies">
-  <h1>Movies found for "${searchTerm}":</h1>
+import { toSingleGifView } from './gif-view.js';
+export const toSearchView = (gifs, searchTerm, pagination) => `
+<section id="gifs">
+  <h1>GIFs found for "${searchTerm}":</h1>
+  <small>Shown ${pagination.count} of ${pagination.total_count}</small>
   <div class="content">
-    ${movies.map(toMovieSimple).join('\n') || '<p>Add some movies to favorites to see them here.</p>'}
+    <ul class="content-gifs">
+      <li>
+    ${gifs.map(toSingleGifView).join('</li><li>') || '<p>Add some GIFs to favorites to see them here.</p>'}
+      </li>
+    </ul>
   </div>
-</div>
+</section>
 `;

@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // toggle favorite event
-    if (event.target.classList.contains(/* favorites item class here */)) {
-      toggleFavoriteStatus(+event.target.getAttribute(/* your correct data attribute here */));
+    if (event.target.classList.contains('favorite')) {
+      toggleFavoriteStatus(event.target.getAttribute('data-gif-id'));
     }
 
   });
