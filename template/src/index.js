@@ -1,28 +1,16 @@
 import { HOME } from './common/constants.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
 import { q } from './events/helpers.js';
-import { loadPage, renderCategory, renderMovieDetails } from './events/navigation-events.js';
+import { loadPage } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // add global listener
   document.addEventListener('click', event => {
-    debugger;
     // nav events
     if (event.target.classList.contains('nav-link')) {
-
       loadPage(event.target.getAttribute('data-page'));
-    }
-
-    // show category events
-    if (event.target.classList.contains('view-category')) {
-      renderCategory(+event.target.getAttribute('data-category'));
-    }
-
-    // show movie events
-    if (event.target.classList.contains(/* your button class here */)) {
-      renderMovieDetails(+event.target.getAttribute(/* your correct data attribute here */));
     }
 
     // toggle favorite event

@@ -1,30 +1,8 @@
-import {
-    getCategories,
-    getMoviesGeneralInfo,
-    getMovieById,
-    getCategory,
-    searchMovies,
-} from '../data/movies.js';
+import { getTrending } from '../data/giphy.js';
 
-export const loadCategories = () => {
-    // missing implementation
-    const categories = getCategories();
-    return categories;
-};
-
-export const loadCategory = (id = null) => {
-    const category = getCategory(id);
-    return category;
-};
-
-export const loadMovies = (categoryId = null) => {
-    const movies = getMoviesGeneralInfo(categoryId);
-
-    return movies;
-};
-
-export const loadSingleMovie = (id) => {
-    // missing implementation
+export const loadTrending = async (limit,offset) => {
+    const result = await getTrending(limit,offset);
+    return result;
 };
 
 export const loadSearchMovies = (searchTerm = '') => {

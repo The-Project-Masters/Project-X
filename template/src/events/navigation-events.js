@@ -1,22 +1,16 @@
-import {
-    CONTAINER_SELECTOR,
-    HOME,
-    CATEGORIES,
-    FAVORITES,
-    ABOUT,
-    TRENDING,
-} from "../common/constants.js";
-// import { toTrendingView } from "../views/trending-view.js";
-import { toCategoriesView } from "../views/category-view.js";
-import { toFavoritesView } from "../views/favorites-view.js";
+import { HOME, TRENDING, FAVORITES, ABOUT, CONTAINER_SELECTOR } from '../common/constants.js';
 import { toAboutView } from "../views/about-view.js";
+import { toTrendingView } from "../views/trending-view.js";
 import { toHomeView } from "../views/home-view.js";
-import { toMoviesFromCategoryView } from "../views/movie-views.js";
+// import { toUploadView } from '../views/upload-view.js';
 import { q, setActiveNav } from "./helpers.js";
+import { loadTrending } from "../requests/request-service.js";
+// import { getGifById } from '../data/giphy.js';
+import { toFavoritesView } from "../views/favorites-view.js";
+// import { getUploaded } from '../data/uploaded.js';
+
+
 import { getFavorites } from '../data/favorites.js'
-import { getMoviesFullInfo } from '../data/movies.js'
-import { loadCategories, loadCategory } from "../requests/request-service.js";
-import { movies } from "../data/movies-data.js";
 
 // public API
 export const loadPage = (page = "") => {
@@ -24,9 +18,6 @@ export const loadPage = (page = "") => {
         case HOME:
             setActiveNav(HOME);
             return renderHome();
-        case CATEGORIES:
-            setActiveNav(CATEGORIES);
-            return renderCategories();
         case FAVORITES:
             setActiveNav(FAVORITES);
             return renderFavorites();
@@ -42,53 +33,15 @@ export const loadPage = (page = "") => {
     }
 };
 
-export const renderMovieDetails = (id = null) => {
-    // missing implementation
-    let movie = movies.filter((movie) => {
-        return movie.id === id;
-    })[0];
-    // console.log(filteredMovies);
-    const template = `
-    <div class="container">
-              <img src="${movie.poster}">
-              <p>${movie.genre}</p>
-              <p>${movie.director}</p>
-              <p>${movie.description}</p>
-            </div>`;
-    // console.log(template);
-};
-
-export const renderCategory = (categoryId = null) => {
-    debugger;
-    // missing partial implementation
-    if (categoryId == null) {
-        return `No movies found in this category`;
-    }
-
-    const category = loadCategory(categoryId);
-    const moviesFilter = getMoviesFullInfo(categoryId);
-
-    q(CONTAINER_SELECTOR).innerHTML = toMoviesFromCategoryView(
-        category,
-        moviesFilter
-    );
-};
-
 // private functions
-
 
 const renderHome = () => {
     q(CONTAINER_SELECTOR).innerHTML = toHomeView();
 };
 
-const renderTrending = () => {
-    const trending = loadTrending();
+const renderTrending = async () => {
+    const trending = await loadTrending(10);
     q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trending);
-};
-
-const renderCategories = () => {
-    const categories = loadCategories();
-    q(CONTAINER_SELECTOR).innerHTML = toCategoriesView(categories);
 };
 
 const renderFavorites = () => {
