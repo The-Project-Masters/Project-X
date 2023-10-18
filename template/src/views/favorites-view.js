@@ -6,10 +6,23 @@ export const toFavoritesView = (favorites) => {
 
   return `
     <div id="gifs">
-      <h1>Favorite gifs:</h1>
-      <div class="content-gifs">
-        ${sortedFavorites.map(toSingleGifView).join('\n') || '<p>Add some gifs to favorites to see them here.</p>'}
+    <section class="favoritesHome">
+    <div class="container">
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Favorites</h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
       </div>
+      <div class="row justify-content-left">
+      ${sortedFavorites.map(toSingleGifView).join('\n') || '<p>Add some gifs to favorites to see them here.</p>'}
+      </div>
+    </div>
+  </section>
     </div>
   `;
 };
+
+
+

@@ -4,7 +4,7 @@ export const toHomeView = (trending, favorites, upload) => `
 <div id="home">
   <section class="trendingHome">
     <div class="container">
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Trending</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Top-Rated Gifs</h2>
       <!-- Icon Divider-->
       <div class="divider-custom">
         <div class="divider-custom-line"></div>
@@ -19,7 +19,7 @@ export const toHomeView = (trending, favorites, upload) => `
 
   <section class="favoritesHome">
     <div class="container">
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Favorites</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">My Favorites</h2>
       <!-- Icon Divider-->
       <div class="divider-custom">
         <div class="divider-custom-line"></div>
@@ -34,7 +34,7 @@ export const toHomeView = (trending, favorites, upload) => `
 
   <section class="trendingHome">
     <div class="container">
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Uploaded</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">My Uploads</h2>
       <!-- Icon Divider-->
       <div class="divider-custom">
         <div class="divider-custom-line"></div>

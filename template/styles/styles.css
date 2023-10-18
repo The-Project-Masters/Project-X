@@ -4366,6 +4366,7 @@ fieldset:disabled .btn {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
+  text-align: center;
 }
 
 .navbar-toggler {
@@ -12710,6 +12711,7 @@ html {
 
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
   color: #1abc9c;
+  cursor: pointer;
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:active,
@@ -12824,6 +12826,21 @@ html {
   }
 }
 
+@media (max-width: 992px) {
+  .navbar-brand img {
+    max-width: 170px;
+  }
+
+  #mainNav .navbar-nav {
+    margin-bottom: 1.5rem;
+  }
+
+  .navbar-collapse {
+    line-height: 1em;
+    margin-bottom: 20px;
+  }
+}
+
 .portfolio .portfolio-item {
   cursor: pointer;
   position: relative;
@@ -12900,6 +12917,10 @@ html {
   max-width: 1340px;
   margin: 0 auto;
   padding: 10vh 0;
+}
+
+#gifs em {
+  color: var(--bs-primary);
 }
 
 .favoritesHome {
