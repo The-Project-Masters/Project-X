@@ -16,4 +16,3 @@ export const toTrendingView = (trending) => `
 </div>
 </section>
 `;
-

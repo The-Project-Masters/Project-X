@@ -10,7 +10,10 @@ export const toSearchView = (gifs, searchTerm, pagination) => `
         <div class="divider-custom-line"></div>
       </div>
       <div class="row justify-content-left">
-      ${gifs.map(toSingleGifView).join('') || '<p>No gifs are found based on your input.</p>'}
+      ${
+          gifs.map(toSingleGifView).join('') ||
+          '<p>No gifs are found based on your input.</p>'
+      }
       </div>
     </div>
   </section>

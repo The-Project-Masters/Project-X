@@ -10,8 +10,10 @@ import { API_KEY } from '../common/constants.js';
  * @returns {Promise} A promise that resolves to the response data containing trending GIFs.
  */
 export const getTrending = async (limit = 10, offset = 0) => {
-  const response = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=${limit}&offset=${offset}`);
-  return await response.json();
+    const response = await fetch(
+        `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=${limit}&offset=${offset}`
+    );
+    return await response.json();
 };
 
 /**
@@ -23,8 +25,10 @@ export const getTrending = async (limit = 10, offset = 0) => {
  * @returns {Promise} A promise that resolves to the response data containing search results.
  */
 export const searchGifs = async (query, limit = 25, offset = 0) => {
-  const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${query}&limit=${limit}&offset=${offset}`);
-  return await response.json();
+    const response = await fetch(
+        `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${query}&limit=${limit}&offset=${offset}`
+    );
+    return await response.json();
 };
 
 /**
@@ -34,8 +38,10 @@ export const searchGifs = async (query, limit = 25, offset = 0) => {
  * @returns {Promise} A promise that resolves to the response data containing the GIF.
  */
 export const getGifById = async (id) => {
-  const response = await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`);
-  return await response.json();
+    const response = await fetch(
+        `https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`
+    );
+    return await response.json();
 };
 
 /**
@@ -45,8 +51,10 @@ export const getGifById = async (id) => {
  * @returns {Promise} A promise that resolves to the response data containing the GIFs.
  */
 export const getGifsByIds = async (ids) => {
-  const response = await fetch(`https://api.giphy.com/v1/gifs?api_key=${API_KEY}&ids=${ids.join(',')}`);
-  return await response.json();
+    const response = await fetch(
+        `https://api.giphy.com/v1/gifs?api_key=${API_KEY}&ids=${ids.join(',')}`
+    );
+    return await response.json();
 };
 
 /**
@@ -55,6 +63,8 @@ export const getGifsByIds = async (ids) => {
  * @returns {Promise} A promise that resolves to the response data containing a random GIF.
  */
 export const getRandomGif = async () => {
-  const response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`);
-  return await response.json();
+    const response = await fetch(
+        `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`
+    );
+    return await response.json();
 };

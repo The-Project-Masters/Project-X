@@ -9,13 +9,13 @@ let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
  * @param {string} gifId - The unique identifier of the GIF to add to favorites.
  */
 export const addFavorite = (gifId) => {
-  if (favorites.find(id => id === gifId)) {
-    return;
-  }
+    if (favorites.find((id) => id === gifId)) {
+        return;
+    }
 
-  favorites.push(gifId);
+    favorites.push(gifId);
 
-  localStorage.setItem('favorites', JSON.stringify(favorites));
+    localStorage.setItem('favorites', JSON.stringify(favorites));
 };
 
 /**
@@ -23,9 +23,9 @@ export const addFavorite = (gifId) => {
  * @param {string} gifId - The unique identifier of the GIF to remove from favorites.
  */
 export const removeFavorite = (gifId) => {
-  favorites = favorites.filter(id => id !== gifId);
+    favorites = favorites.filter((id) => id !== gifId);
 
-  localStorage.setItem('favorites', JSON.stringify(favorites));
+    localStorage.setItem('favorites', JSON.stringify(favorites));
 };
 
 /**

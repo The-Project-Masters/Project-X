@@ -1,6 +1,6 @@
 import { toSingleGifView } from './gif-view.js';
 export const toUploadView = (upload) => {
-  return `
+    return `
   <div id="gif-upload-form" class="container">
   <h5 class="page-section-heading text-center text-uppercase text-secondary mb-5">Upload your GIF</h5>
   <form id="upload-form"  >
@@ -20,7 +20,7 @@ export const toUploadView = (upload) => {
         <div class="divider-custom-line"></div>
       </div>
       <div class="row justify-content-left">
-        ${(upload.data ? upload.data.map(toSingleGifView).join('') : upload)}
+        ${upload.data ? upload.data.map(toSingleGifView).join('') : upload}
       </div>
 
       <button class='btn btn-primary btn-lg clearUploads mt-5'>Clear uploads</button>

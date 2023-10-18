@@ -42,7 +42,7 @@ export const toHomeView = (trending, favorites, upload) => `
         <div class="divider-custom-line"></div>
       </div>
       <div class="row justify-content-left">
-        ${(upload.data ? upload.data.map(toSingleGifView).join('') : upload)}
+        ${upload.data ? upload.data.map(toSingleGifView).join('') : upload}
       </div>
 
       <button class='btn btn-primary btn-lg clearUploads mt-5'>Clear uploads</button>

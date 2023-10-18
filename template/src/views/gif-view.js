@@ -4,20 +4,27 @@ export const toSingleGifView = (gif) => `
     <div class="trending_gif">
       <img src="${gif.images.fixed_height.url}" alt="${gif.title}">
       <div class="info">
-        <h5 class="gifName">${gif.title }</h5>
+        <h5 class="gifName">${gif.title}</h5>
         <div class="userInfo">
-          <i class="fas fa-user"></i> <strong>From:</strong> ${gif.user && gif.user.username ? 
-          (gif.user.username.length <= 19 ? gif.user.username :
-            gif.user.username.slice(0, 19) + '...') :
-          'No Username'}
+          <i class="fas fa-user"></i> <strong>From:</strong> ${
+              gif.user && gif.user.username
+                  ? gif.user.username.length <= 19
+                      ? gif.user.username
+                      : gif.user.username.slice(0, 19) + '...'
+                  : 'No Username'
+          }
         </div>
         
         <div class="dateUplaod">
-          <i class="fas fa-calendar"></i> <strong>Added:</strong> ${gif.import_datetime}
+          <i class="fas fa-calendar"></i> <strong>Added:</strong> ${
+              gif.import_datetime
+          }
         </div>
 
         <div class="linkToGif">
-        <i class="fas fa-up-right-from-square"></i> <a target="_blank" href="https://media2.giphy.com/media/${gif.id}/giphy.gif">Open in GIPHY</a>
+        <i class="fas fa-up-right-from-square"></i> <a target="_blank" href="https://media2.giphy.com/media/${
+            gif.id
+        }/giphy.gif">Open in GIPHY</a>
       </div>
 
       </div>

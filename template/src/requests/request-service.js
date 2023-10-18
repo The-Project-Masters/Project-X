@@ -1,4 +1,9 @@
-import { getTrending, searchGifs, getGifsByIds, getRandomGif, } from '../data/giphy.js';
+import {
+    getTrending,
+    searchGifs,
+    getGifsByIds,
+    getRandomGif,
+} from '../data/giphy.js';
 import { getFavorites } from '../data/favorites.js';
 
 /**
@@ -9,8 +14,8 @@ import { getFavorites } from '../data/favorites.js';
  * @returns {Promise} - A promise that resolves with the fetched GIFs.
  */
 export const loadTrending = async (limit, offset) => {
-  const result = await getTrending(limit, offset);
-  return result;
+    const result = await getTrending(limit, offset);
+    return result;
 };
 
 /**
@@ -22,8 +27,8 @@ export const loadTrending = async (limit, offset) => {
  * @returns {Promise} - A promise that resolves with the fetched search results.
  */
 export const getSearchResults = async (query, limit, offset) => {
-  const result = await searchGifs(query, limit, offset);
-  return result;
+    const result = await searchGifs(query, limit, offset);
+    return result;
 };
 
 /**
@@ -32,8 +37,8 @@ export const getSearchResults = async (query, limit, offset) => {
  * @returns {Promise} - A promise that resolves with the fetched GIFs.
  */
 export const loadHomeTrending = async () => {
-  const result = await getTrending(10);
-  return result;
+    const result = await getTrending(10);
+    return result;
 };
 
 /**
@@ -42,12 +47,12 @@ export const loadHomeTrending = async () => {
  * @returns {Promise} - A promise that resolves with the fetched favorite GIFs.
  */
 export const loadHomeFavorites = async () => {
-  const favorites = getFavorites();
+    const favorites = getFavorites();
 
-  if (!favorites.length) {
-    const randomGif = await getRandomGif();
-    favorites.push(randomGif.data.id);
-  }
+    if (!favorites.length) {
+        const randomGif = await getRandomGif();
+        favorites.push(randomGif.data.id);
+    }
 
-  return await getGifsByIds(favorites);
+    return await getGifsByIds(favorites);
 };

@@ -1,10 +1,10 @@
 import { toSingleGifView } from './gif-view.js';
 
 export const toFavoritesView = (favorites) => {
-  // Insert new favorites at the beginning of the list
-  const sortedFavorites = [...favorites.data].reverse();
+    // Insert new favorites at the beginning of the list
+    const sortedFavorites = [...favorites.data].reverse();
 
-  return `
+    return `=
     <div id="gifs">
     <section class="favoritesHome">
     <div class="container">
@@ -16,13 +16,13 @@ export const toFavoritesView = (favorites) => {
         <div class="divider-custom-line"></div>
       </div>
       <div class="row justify-content-left">
-      ${sortedFavorites.map(toSingleGifView).join('\n') || '<p>Add some gifs to favorites to see them here.</p>'}
+      ${
+          sortedFavorites.map(toSingleGifView).join('\n') ||
+          '<p>Add some gifs to favorites to see them here.</p>'
+      }
       </div>
     </div>
   </section>
     </div>
   `;
 };
-
-
-
