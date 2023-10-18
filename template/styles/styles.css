@@ -12913,10 +12913,43 @@ html {
 
 /* NEW */
 .trendingHome .container,
-.favoritesHome .container {
+.favoritesHome .container,
+.uploadedHome .container,
+#about .container {
   max-width: 1340px;
   margin: 0 auto;
   padding: 10vh 20px;
+}
+
+#about p.lead {
+  text-align: center;
+}
+
+#about .row svg {
+  font-size: 5em;
+  margin-bottom: 20px;
+}
+
+#about .row ul li {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+
+#about .row ul li strong {
+  display: contents;
+  color: #1abc9c;
+  font-weight: 800;
+}
+
+#about .row ul li svg {
+  font-size: 18px;
+  margin: 0px 10px 0 0px;
+  color: #1abc9c;
+}
+
+#about .aboutUsCTA {
+  background: #f8f8f8;
 }
 
 #gifs em {
@@ -12935,6 +12968,11 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: 0.4s ease;
+}
+
+.trending_gif:hover {
+  box-shadow: 0 0 10px 1px rgb(0 0 0 / 20%);
 }
 
 .trending_gif img {

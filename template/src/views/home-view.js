@@ -32,7 +32,7 @@ export const toHomeView = (trending, favorites, upload) => `
     </div>
   </section>
 
-  <section class="trendingHome">
+  <section class="uploadedHome">
     <div class="container">
       <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">My Uploads</h2>
       <!-- Icon Divider-->
