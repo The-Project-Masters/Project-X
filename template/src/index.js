@@ -6,6 +6,8 @@ import { renderSearchItems } from './events/search-events.js';
 import { uploadingGif , clearUploads} from './requests/upload-request.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  loadPage(HOME);
+
   // add global listener
   document.addEventListener('click', (event) => {
     // nav events
