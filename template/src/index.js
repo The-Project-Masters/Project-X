@@ -7,6 +7,7 @@ import { uploadingGif, clearUploads } from './requests/upload-request.js';
 
 // Event listener for when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+  loadPage(HOME);
   // Global click event listener
   document.addEventListener('click', (event) => {
     // Handle navigation events
