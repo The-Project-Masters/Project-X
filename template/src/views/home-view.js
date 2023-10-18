@@ -22,5 +22,15 @@ export const toHomeView = (trending, favorites, upload) => `
       </ul>
     </div>
   </section>
+  <section class="trendingHome">
+  <h1>Uploaded Gifs</h1> <button class='clearUploads'>Clear</button>
+  <div class="content">
+    <ul class = "content-gifs">
+      <li>
+        ${(upload.data ? upload.data.map(toSingleGifView).join('</li><li>') : upload)}
+      </li>
+    </ul>
+  </div>
+</section>
 </div>
 `;
