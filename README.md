@@ -1,9 +1,9 @@
-**Welcome to GIFWORLD - Your Gateway to the GIF Universe**
+# Welcome to GIFWORLD - Your Gateway to the GIF Universe
 
-**About GIFWORLD:**
+## About GIFWORLD
 GIFWORLD is your one-stop destination for all things GIFs, offering an immersive and interactive experience in the world of animated fun. Our Single Page Application (SPA) is designed to connect you with the hottest trending GIFs, empower you to curate your personal favorites, and even unleash your creativity by uploading your very own GIFs. Developed in 2023 by the talented duo Rado & Ventsi, GIFWORLD is your portal to the GIFverse.
 
-**Key Features:**
+## Key Features
 
 1. **Explore Trending GIFs:** Dive headfirst into the world of GIFs with a curated selection of the trendiest, funniest, and most shareable animated content. Our intuitive interface makes browsing a breeze.
 
@@ -13,8 +13,7 @@ GIFWORLD is your one-stop destination for all things GIFs, offering an immersive
 
 4. **Upload Your Creativity:** Unleash your creative spirit by uploading your very own GIF creations. Share your unique content with the world, and who knows, it might just become the next viral sensation!
 
-
-**Why Choose GIFWORLD:**
+## Why Choose GIFWORLD
 
 - **User-Friendly Responsive Design:** Our user interface is sleek and intuitive, ensuring that you can navigate the GIF universe with ease.
 
