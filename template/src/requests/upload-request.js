@@ -7,7 +7,7 @@ import { loadPage } from '../events/navigation-events.js';
 
 // Function to check if the URL ends with ".gif"
 function isGifUrl(url) {
-  return url.endsWith('.gif');
+  return url.endsWith('.gif') || url.endsWith('.mp4') || url.endsWith('.mov') || url.endsWith('.webm');
 }
 
 /**
