@@ -12740,6 +12740,7 @@ html {
 
   #mainNav .navbar-nav {
     margin-top: 0;
+    margin-right: 30px;
   }
 
   #mainNav .navbar-nav>li.nav-item>a.nav-link.active {
@@ -12906,6 +12907,7 @@ html {
 }
 
 .trending_gif {
+  background: #fff;
   padding: 15px;
   height: 100%;
   border: 2px solid #eaeaea;
@@ -12938,14 +12940,22 @@ a.active {
 }
 
 input#search {
-  font-size: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  border: 1px solid gray;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+  border: none;
   border-radius: 4px;
-  height: 24px;
+  height: 50px;
+  padding: 15px 15px 15px 50px;
   flex: 1 0;
   margin: auto;
+  max-width: 200px;
+}
+
+.headerSearch svg {
+  position: absolute;
+  padding: 17px 10px;
+  border-right: 1px solid #eaeaea;
 }
 
 .favorites {
