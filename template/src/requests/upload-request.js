@@ -5,7 +5,7 @@ import { loadPage } from '../events/navigation-events.js';
 
 // eslint-disable-next-line consistent-return
 
-// Function to check if the URL ends with ".gif"
+// Function to check if the URL is valid format.
 function isGifUrl(url) {
   return url.endsWith('.gif') || url.endsWith('.mp4') || url.endsWith('.mov') || url.endsWith('.webm');
 }
