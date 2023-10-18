@@ -3,37 +3,44 @@ import { toggleFavoriteStatus } from './events/favorites-events.js';
 import { q } from './events/helpers.js';
 import { loadPage } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
-import { uploadingGif , clearUploads} from './requests/upload-request.js';
+import { uploadingGif, clearUploads } from './requests/upload-request.js';
 
+// Event listener for when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  loadPage(HOME);
-
-  // add global listener
+  // Global click event listener
   document.addEventListener('click', (event) => {
-    // nav events
+    // Handle navigation events
     if (event.target.classList.contains('nav-link')) {
+      // Navigate to the selected page
       loadPage(event.target.getAttribute('data-page'));
     }
 
-    // toggle favorite event
+    // Toggle favorite event
     if (event.target.classList.contains('favorite')) {
+      // Toggle the favorite status of a GIF
       toggleFavoriteStatus(event.target.getAttribute('data-gif-id'));
     }
 
-    if(event.target.classList.contains('uploadBtn')){
+    // Upload event
+    if (event.target.classList.contains('uploadBtn')) {
+      // Trigger the GIF uploading process
       uploadingGif();
     }
 
-    if(event.target.classList.contains('clearUploads')){
+    // Clear uploaded GIFs event
+    if (event.target.classList.contains('clearUploads')) {
+      // Clear the list of uploaded GIFs and load the HOME page
       clearUploads();
       loadPage(HOME);
     }
   });
 
-  // search events
+  // Search input field event
   q('input#search').addEventListener('input', (event) => {
+    // Render search results based on the input value
     renderSearchItems(event.target.value);
   });
 
-  loadPage(HOME);    
+  // Load the default page (HOME) upon DOM load
+  loadPage(HOME);
 });
